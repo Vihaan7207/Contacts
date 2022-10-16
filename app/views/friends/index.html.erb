@@ -1,0 +1,34 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Your Friends</h1>
+
+<table class="table">
+<thead>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Twitter</th>
+    <th>Options</th>
+  </tr>
+</thead>
+<tbody>
+  <% @friends.each do |friend| %>
+     
+   <tr>
+    <td><%= friend.first_name%></td>
+    <td><%= friend.last_name%></td>
+    <td><%= friend.email%></td>
+    <td><%= friend.phone%></td>
+    <td><%= friend.twitter%></td>
+    <td><%= link_to "Show", friend %>
+    </tr>
+  <% end %>
+</tbody>
+</table>
+<a href="/friends/new">
+<button type="btn" class="btn btn-secondary" style="text-decoration: none; color: white;">
+New Friend
+</button>
+</a>
